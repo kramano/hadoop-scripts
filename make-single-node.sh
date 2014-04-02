@@ -2,9 +2,9 @@ cd ~
 sudo apt-get update
 
 # Download java jdk
-sudo apt-get install openjdk-7-jdk
+#sudo apt-get install openjdk-7-jdk
 cd /usr/lib/jvm
-sudo ln -s java-7-openjdk-amd64 jdk
+sudo ln -s /usr/lib/jvm/java-7-oracle jdk
 
 # Uncommment to install ssh 
 sudo apt-get install openssh-server
@@ -30,16 +30,16 @@ sudo mv hadoop-2.2.0 hadoop
 sudo chown -R hduser:hadoop hadoop
 
 # Hadoop variables
-sudo sh -c 'echo export JAVA_HOME=/usr/lib/jvm/jdk/ >> /home/hduser/.bashrc'
-sudo sh -c 'echo export HADOOP_INSTALL=/usr/local/hadoop >> /home/hduser/.bashrc'
-sudo sh -c 'echo export PATH=\$PATH:\$HADOOP_INSTALL/bin >> /home/hduser/.bashrc'
-sudo sh -c 'echo export PATH=\$PATH:\$HADOOP_INSTALL/sbin >> /home/hduser/.bashrc'
-sudo sh -c 'echo export HADOOP_MAPRED_HOME=\$HADOOP_INSTALL >> /home/hduser/.bashrc'
-sudo sh -c 'echo export HADOOP_COMMON_HOME=\$HADOOP_INSTALL >> /home/hduser/.bashrc'
-sudo sh -c 'echo export HADOOP_HDFS_HOME=\$HADOOP_INSTALL >> /home/hduser/.bashrc'
-sudo sh -c 'echo export YARN_HOME=\$HADOOP_INSTALL >> /home/hduser/.bashrc'
-sudo sh -c 'echo export HADOOP_COMMON_LIB_NATIVE_DIR=\$\{HADOOP_INSTALL\}/lib/native >> /home/hduser/.bashrc'
-sudo sh -c 'echo export HADOOP_OPTS=\"-Djava.library.path=\$HADOOP_INSTALL/lib\" >> /home/hduser/.bashrc'
+sudo sh -c 'echo export JAVA_HOME=/usr/lib/jvm/jdk/ >> /home/hduser/.zshrc'
+sudo sh -c 'echo export HADOOP_INSTALL=/usr/local/hadoop >> /home/hduser/.zshrc'
+sudo sh -c 'echo export PATH=\$PATH:\$HADOOP_INSTALL/bin >> /home/hduser/.zshrc'
+sudo sh -c 'echo export PATH=\$PATH:\$HADOOP_INSTALL/sbin >> /home/hduser/.zshrc'
+sudo sh -c 'echo export HADOOP_MAPRED_HOME=\$HADOOP_INSTALL >> /home/hduser/.zshrc'
+sudo sh -c 'echo export HADOOP_COMMON_HOME=\$HADOOP_INSTALL >> /home/hduser/.zshrc'
+sudo sh -c 'echo export HADOOP_HDFS_HOME=\$HADOOP_INSTALL >> /home/hduser/.zshrc'
+sudo sh -c 'echo export YARN_HOME=\$HADOOP_INSTALL >> /home/hduser/.zshrc'
+sudo sh -c 'echo export HADOOP_COMMON_LIB_NATIVE_DIR=\$\{HADOOP_INSTALL\}/lib/native >> /home/hduser/.zshrc'
+sudo sh -c 'echo export HADOOP_OPTS=\"-Djava.library.path=\$HADOOP_INSTALL/lib\" >> /home/hduser/.zshrc'
 
 # Modify JAVA_HOME 
 cd /usr/local/hadoop/etc/hadoop
